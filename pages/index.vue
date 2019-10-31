@@ -1,15 +1,10 @@
 <template>
   <div class="container">
     <div>
-      <logo />
       <h1 class="title">
         Server-Side-Css-Theming
       </h1>
-      <h2 class="subtitle">
-        Pick a Color from the frontend and config a json for the theme to be
-        rendered. Then the css file on the server will be modified with the new
-        values. Using Nuxt and express.
-      </h2>
+      <text-input-form></text-input-form>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">
           Documentation
@@ -27,11 +22,11 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import TextInputForm from '~/components/TextInputForm.vue'
 
 export default {
   components: {
-    Logo
+    TextInputForm
   }
 }
 </script>
