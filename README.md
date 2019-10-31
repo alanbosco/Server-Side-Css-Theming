@@ -1,2 +1,22 @@
 # Server-Side-Css-Theming
-Pick a Color from the frontend and config a json for the theme to be rendered. Then the css file on the server will be modified with the new values.
+
+> Pick a Color from the frontend and config a json for the theme to be rendered. Then the css file on the server will be modified with the new values. Using Nuxt and express. 
+
+## Build Setup
+
+``` bash
+# install dependencies
+$ yarn install
+
+# serve with hot reload at localhost:3000
+$ yarn dev
+
+# build for production and launch server
+$ yarn build
+$ yarn start
+
+# generate static project
+$ yarn generate
+```
+
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
