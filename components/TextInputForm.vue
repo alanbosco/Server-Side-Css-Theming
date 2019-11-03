@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'TextInputForm',
   data() {
@@ -40,10 +41,35 @@ export default {
       show: true
     }
   },
+  mounted() {
+    console.log('hiii')
+    axios
+      .get('http://localhost:4000/')
+      .then(function(response) {
+        // handle success
+        console.log(response.data)
+      })
+      .catch(function(error) {
+        // handle error
+        console.log(error)
+      })
+      .finally(function() {
+        // always executed
+      })
+  },
   methods: {
+    addGin() {},
     onSubmit(evt) {
       evt.preventDefault()
-      alert(JSON.stringify(this.form))
+      // alert(JSON.stringify(this.form))
+      axios
+        .post('http://localhost:4000/', this.form)
+        .then(function(response) {
+          console.log(response)
+        })
+        .catch(function(error) {
+          console.log(error)
+        })
     },
     onReset(evt) {
       evt.preventDefault()
