@@ -1,5 +1,9 @@
 <template>
   <div>
+    <div>
+      <div class="color1" style="height: 100px;width: 100px"></div>
+      <div class="color2" style="height: 100px;width: 100px"></div>
+    </div>
     <b-form v-if="show" @submit="onSubmit" @reset="onReset">
       <b-form-group id="input-group-1" label="Color 1:" label-for="input-1">
         <b-form-input
@@ -42,7 +46,6 @@ export default {
     }
   },
   mounted() {
-    console.log('hiii')
     axios
       .get('http://localhost:4000/')
       .then(function(response) {
@@ -63,7 +66,14 @@ export default {
       evt.preventDefault()
       // alert(JSON.stringify(this.form))
       axios
-        .post('http://localhost:4000/', this.form)
+        .post('http://localhost:4000/', {
+          '.color1': {
+            'background-color': this.form.color1
+          },
+          '.color2': {
+            'background-color': this.form.color2
+          }
+        })
         .then(function(response) {
           console.log(response)
         })

@@ -17,13 +17,13 @@ app.post('/', function(request, response) {
   console.log(request.body) // your JSON
   response.send(request.body) // echo the result back
   const css = Css.of(request.body)
-  fs.writeFile('style.css', css, 'utf8', function(err,contents) {
-    console.log(contents);
-  });
-  var json = JSON.stringify(request.body);
-  fs.writeFile('styleConfig.json', json, 'utf8', function(err,contents) {
-    console.log(contents);
-  });
+  fs.writeFile('style.css', css, 'utf8', function(err, contents) {
+    console.log(contents)
+  })
+  const json = JSON.stringify(request.body)
+  fs.writeFile('styleConfig.json', json, 'utf8', function(err, contents) {
+    console.log(contents)
+  })
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
